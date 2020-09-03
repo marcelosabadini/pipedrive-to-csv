@@ -1,3 +1,5 @@
+Feel free to modify and change what ever you want. I wrote this code in a few minutes, just to help a friend.
+
 # Show me the code
 
 ## What you have to install
