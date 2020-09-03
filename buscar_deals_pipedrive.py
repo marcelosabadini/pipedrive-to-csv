@@ -6,6 +6,8 @@ import pandas as pd
 pipedrive = Pipedrive(conf.API_KEY)
 df        = pd.DataFrame(columns=('add_time', 'lead_id', 'person_name', 'org_name', 'origem', 'person_id_phone', 'person_id_mail', 'owner_name', 'status',  'stage_change_time' ,  'lost_reason' ,'pipeline_id'))
 
+initial_status = 0
+
 final_lines = []
 for st in range(0,300,100):    
     print('Status=', st)
