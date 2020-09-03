@@ -1,6 +1,7 @@
 conf.py
 deals.csv
 all_deals.csv
+versao_mallone.py
 __pycache__
 __pycache__/
 __pycache__*
