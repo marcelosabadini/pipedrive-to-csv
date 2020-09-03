@@ -1,13 +1,14 @@
 from pipedrive import Pipedrive
+import conf as conf
 import sys
 import pandas as pd
 
-API_KEY   = ''
-pipedrive = Pipedrive(API_KEY)
+pipedrive = Pipedrive(conf.API_KEY)
 df        = pd.DataFrame(columns=('add_time', 'lead_id', 'person_name', 'org_name', 'origem', 'person_id_phone', 'person_id_mail', 'owner_name', 'status',  'stage_change_time' ,  'lost_reason' ,'pipeline_id'))
 
 final_lines = []
-for st in range(0,1000000,100):    
+for st in range(0,300,100):    
+    print('Status=', st)
     # Faz a chamada da API
     results = pipedrive.deals({'start': st,}, method='GET')
     # se tiver resultado, vai 
