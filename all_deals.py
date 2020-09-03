@@ -11,9 +11,9 @@ initial_status = 0
 final_lines = []
 for st in range(0,1000000,500):    
     print('Status=', st)
-    # Faz a chamada da API
+    # calls the API
     results = pipedrive.deals({'start': st, 'limit': 500}, method='GET')
-    # se tiver resultado, vai 
+    # if there are results, go ahead!
     if results['data'] != None:       
         for r in results['data']:            
             if r['person_id'] != None and type(r['person_id']) != int:
@@ -38,7 +38,7 @@ for st in range(0,1000000,500):
                 'pipeline_id': r['pipeline_id'] 
             }], ignore_index=True)            
     else:
-        # Quando os resultados da API acabarem ele encerra o loop
+        # If there are no more results, breaks the loop
         break
 
-df.to_csv('deals.csv', index=False)
+df.to_csv('all_deals.csv', index=False)

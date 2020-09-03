@@ -1,5 +1,6 @@
 conf.py
 deals.csv
+all_deals.csv
 __pycache__
 __pycache__/
 __pycache__*
