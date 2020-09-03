@@ -9,7 +9,7 @@ df        = pd.DataFrame(columns=('add_time', 'lead_id', 'person_name', 'org_nam
 initial_status = 0
 
 final_lines = []
-for st in range(0,1000000, conf.LIMIT):    
+for st in range(0,10000000, conf.LIMIT):    
     # calls the API
     results = pipedrive.deals({'start': st, 'limit': 500}, method='GET')
     # if there are results, go ahead!
@@ -43,3 +43,5 @@ for st in range(0,1000000, conf.LIMIT):
     print('Status=', st, 'tamanho do df ', len(df), 'ultimo lead_id', df['lead_id'].max())
 
 df.to_csv('all_deals.csv', index=False)
+
+a = input('Pressione qualquer tecla para concluir o processamento...')
