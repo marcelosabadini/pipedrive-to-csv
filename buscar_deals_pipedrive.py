@@ -9,10 +9,10 @@ df        = pd.DataFrame(columns=('add_time', 'lead_id', 'person_name', 'org_nam
 initial_status = 0
 
 final_lines = []
-for st in range(0,300,100):    
+for st in range(0,1000000,500):    
     print('Status=', st)
     # Faz a chamada da API
-    results = pipedrive.deals({'start': st,}, method='GET')
+    results = pipedrive.deals({'start': st, 'limit': 500}, method='GET')
     # se tiver resultado, vai 
     if results['data'] != None:       
         for r in results['data']:            
