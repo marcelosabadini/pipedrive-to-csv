@@ -16,5 +16,5 @@ I`m using the folow lib instead to call the Pipedrive API: https://pypi.org/proj
 
 ## What you have to config
 
-Please, open the requirements.txt and put your API key. Just it! have a fan :)
+Please, open the `config.py` and put your API key. Just it! have a fan :)
 
